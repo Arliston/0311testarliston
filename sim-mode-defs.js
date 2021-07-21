@@ -538,20 +538,20 @@ SPAWN_RULES.defaults.archetypes = {
 
 SPAWN_RULES.defaults.doSpawn = function(b){
     // tropical waves
-    if(random()<0.0001) b.spawnArchetype('at1');		// upper gulf of mexico
-    if(random()<0.00025) b.spawnArchetype('at2');		// gulf of mexico
-	if(random()<0.0001) b.spawnArchetype('at3');		// yucatan coast 
-    if(random()<0.0001) b.spawnArchetype('at4');		// central america coast
-    if(random()<0.0005) b.spawnArchetype('at5');  		// wide florida coast
-    if(random()<0.0005) b.spawnArchetype('at6');		// caribbean sea
-	if(random()<0.0004) b.spawnArchetype('at7');		// upper mdl 
-    if(random()<0.001) b.spawnArchetype('at8');		// mdl
-    if(random()<0.0002) b.spawnArchetype('at9');	// east coast
-    if(random()<0.00015) b.spawnArchetype('at10');	// upper east coast
+    if(random()<0.0002) b.spawnArchetype('at1');		// upper gulf of mexico
+    if(random()<0.0004) b.spawnArchetype('at2');		// gulf of mexico
+	if(random()<0.0002) b.spawnArchetype('at3');		// yucatan coast 
+    if(random()<0.0002) b.spawnArchetype('at4');		// central america coast
+    if(random()<0.001) b.spawnArchetype('at5');  		// wide florida coast
+    if(random()<0.001) b.spawnArchetype('at6');		// caribbean sea
+	if(random()<0.0007) b.spawnArchetype('at7');		// upper mdl 
+    if(random()<0.0015) b.spawnArchetype('at8');		// mdl
+    if(random()<0.0003) b.spawnArchetype('at9');	// east coast
+    if(random()<0.0002) b.spawnArchetype('at10');	// upper east coast
 	if(random()<0.00015) b.spawnArchetype('at11');	// epac
     if(random()<0.00015) b.spawnArchetype('at12');	// epac
     if(random()<0.00015) b.spawnArchetype('at13');	// epac
-	if(random()<0.001) b.spawnArchetype('at7');            // upper mdl
+	if(random()<0.0015) b.spawnArchetype('at7');            // upper mdl
     if(Math.round(random(1, 640)) == 2) b.spawnArchetype('tw');
 
     // extratropical cyclones
