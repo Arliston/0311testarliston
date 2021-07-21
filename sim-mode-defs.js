@@ -1227,7 +1227,7 @@ ENV_DEFS.defaults.SST = {
         offSeasonPolarTemp: -5,
         peakSeasonPolarTemp: -2,
         offSeasonTropicsTemp: 25,
-        peakSeasonTropicsTemp: 30
+        peakSeasonTropicsTemp: 29.3
     }
 };
 ENV_DEFS[SIM_MODE_NORMAL].SST = {};
