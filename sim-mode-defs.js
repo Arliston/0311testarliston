@@ -141,7 +141,7 @@ SPAWN_RULES.defaults.archetypes = {
         depth: 0
     },
 	'at8': {
-        x: ()=>random(0.417*WIDTH,0.9375*WIDTH),
+        x: ()=>random(0.417*WIDTH,0.7*WIDTH),
         y: (b)=>b.hemY(random(0.63*HEIGHT,0.92*HEIGHT)),
         pressure: [1000, 1020],
         windSpeed: [15, 35],
@@ -198,6 +198,17 @@ SPAWN_RULES.defaults.archetypes = {
 	'at13': {
         x: ()=>random(0.176*WIDTH,0.245*WIDTH),
         y: (b)=>b.hemY(random(0.863*HEIGHT,0.9*HEIGHT)),
+        pressure: [1000, 1020],
+        windSpeed: [15, 35],
+        type: TROPWAVE,
+        organization: [0,0.3],
+        lowerWarmCore: 1,
+        upperWarmCore: 1,
+        depth: 0
+    },
+    'at14': {
+        x: ()=>random(0.7*WIDTH,0.93*WIDTH),
+        y: (b)=>b.hemY(random(0.63*HEIGHT,0.92*HEIGHT)),
         pressure: [1000, 1020],
         windSpeed: [15, 35],
         type: TROPWAVE,
@@ -540,6 +551,7 @@ SPAWN_RULES.defaults.doSpawn = function(b){
 	if(random()<0.00015) b.spawnArchetype('at11');	// epac
     if(random()<0.00015) b.spawnArchetype('at12');	// epac
     if(random()<0.00015) b.spawnArchetype('at13');	// epac
+	if(random()<0.001) b.spawnArchetype('at7');            // upper mdl
     if(Math.round(random(1, 640)) == 2) b.spawnArchetype('tw');
 
     // extratropical cyclones
@@ -1094,7 +1106,7 @@ ENV_DEFS.defaults.SSTAnomaly = {
     mapFunc: (u,x,y,z)=>{
         let v = u.noise(0);
         v = v*1.95;
-        let i = v<1 ? -1 : 1;
+        let i = v<1 ? -0.75 : 0.75;
         v = 1-abs(1-v);
         if(v===0) v = 0.000001;
         v = log(v);
@@ -1215,7 +1227,7 @@ ENV_DEFS.defaults.SST = {
         offSeasonPolarTemp: -5,
         peakSeasonPolarTemp: -2,
         offSeasonTropicsTemp: 25,
-        peakSeasonTropicsTemp: 28.5
+        peakSeasonTropicsTemp: 30
     }
 };
 ENV_DEFS[SIM_MODE_NORMAL].SST = {};
