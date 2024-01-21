@@ -1240,11 +1240,12 @@ ENV_DEFS[SIM_MODE_HYPER].SST = {
     }
 };
 ENV_DEFS[SIM_MODE_WILD].SST = {
-    modifiers: {
-        offSeasonPolarTemp: 5,
-        peakSeasonPolarTemp: 20,
-        offSeasonTropicsTemp: 31,
-        peakSeasonTropicsTemp: 35
+    mapFunc: (u,x,y,z)=>{
+        if(y<0) return 0;
+        let anom = u.field('SSTAnomaly');
+        let s = u.yearfrac(z);
+        let t = u.piecewise(s,[[0,31],[2,32],[4,33],[5,34],[6,34.5],[7,35],[9,34],[10,33],[11,32]]);
+        return t+anom;
     }
 };
 ENV_DEFS[SIM_MODE_MEGABLOBS].SST = {
