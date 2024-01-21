@@ -1147,9 +1147,9 @@ ENV_DEFS[SIM_MODE_NORMAL].SSTAnomaly = {};
 ENV_DEFS[SIM_MODE_HYPER].SSTAnomaly = {};
 ENV_DEFS[SIM_MODE_WILD].SSTAnomaly = {
     modifiers: {
-        r: 5,
-        bigBlobBase: 1.4,
-        bigBlobExponentThreshold: 1.5
+        r: 7,
+        bigBlobBase: 1.8,
+        bigBlobExponentThreshold: 1
     }
 };
 ENV_DEFS[SIM_MODE_MEGABLOBS].SSTAnomaly = {
@@ -1240,12 +1240,11 @@ ENV_DEFS[SIM_MODE_HYPER].SST = {
     }
 };
 ENV_DEFS[SIM_MODE_WILD].SST = {
-    mapFunc: (u,x,y,z)=>{
-        if(y<0) return 0;
-        let anom = u.field('SSTAnomaly');
-        let s = u.yearfrac(z);
-        let t = u.piecewise(s,[[0,22],[2,25.5],[4,25],[5,26.5],[6,27],[6.25,30],[6.75,31],[7,28],[9,27],[10,26],[11,23]]);
-        return t+anom;
+    modifiers: {
+        offSeasonPolarTemp: 5,
+        peakSeasonPolarTemp: 20,
+        offSeasonTropicsTemp: 31,
+        peakSeasonTropicsTemp: 35
     }
 };
 ENV_DEFS[SIM_MODE_MEGABLOBS].SST = {
