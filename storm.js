@@ -285,7 +285,6 @@ class Storm{
                         tracks.stroke(col);
                         let pos = adv.pos;
                         let nextPos = this.record[this.record.length-1].pos;
-                        if(simSettings.trackMode===1 || (t>=this.formationTime && (!this.dissipationTime || t<this.dissipationTime))) tracks.line(pos.x,pos.y,nextPos.x,nextPos.y);
                         if(simSettings.trackMode===1 || (t>=this.formationTime && (!this.dissipationTime || t<this.dissipationTime))) tracks.circle(pos.x,pos.y,nextPos.x,nextPos.y);                        
                     }
                 }else if(this.aliveAt(viewTick) || simSettings.trackMode===2 || selectedStorm===this){
@@ -300,7 +299,6 @@ class Storm{
                         tracks.stroke(col);
                         let pos = adv.pos;
                         let nextPos = this.record[n+1].pos;
-                        tracks.line(pos.x,pos.y,nextPos.x,nextPos.y);
                         tracks.circle(pos.x,pos.y,nextPos.x,nextPos.y);                        
                     }
                 }
