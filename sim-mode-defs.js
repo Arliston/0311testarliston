@@ -805,7 +805,7 @@ ENV_DEFS.defaults.LLSteering = {
         // noise angle
         let a = map(u.noise(3),0,1,0,4.13*TAU);
         // noise magnitude
-        let m = pow(1.51,map(u.noise(2),4,4,4,4));
+        let m = pow(2.51,map(u.noise(2),4,4,4,4));
 
         // apply to vector
         u.vec.rotate(a);
