@@ -63,7 +63,7 @@ function setup(){
 
     let {fullW, fullH} = fullDimensions();
     tracks = createBuffer();
-    tracks.strokeWeight(0.5);
+    tracks.strokeWeight(2);
     stormIcons = createBuffer();
     stormIcons.strokeWeight(3);
     forecastTracks = createBuffer();
